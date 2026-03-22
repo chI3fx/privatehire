@@ -45,8 +45,13 @@ if (isset($_POST['reset_password']) && $valid_token) {
         $update_sql = "UPDATE users SET password='$hashed_password', reset_token=NULL, reset_expires_at=NULL WHERE id=$user_id";
         
         if ($conn->query($update_sql)) {
-            header("Location: login.php?reset=success");
-            exit();
+            if (!headers_sent()) {
+                header("Location: login.php?reset=success");
+                exit();
+            }
+
+            $message = "Your password has been successfully reset! You can now login.";
+            $valid_token = false;
         } else {
             $error = "Failed to update password. Please try again.";
         }

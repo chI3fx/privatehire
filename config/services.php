@@ -12,8 +12,8 @@ if (!function_exists('privatehire_send_email')) {
         require_once __DIR__ . '/../vendor/autoload.php';
 
         $mail = new PHPMailer(true);
-        $smtpUser = getenv('MAIL_USERNAME') ?: 'YOUR_GMAIL_ADDRESS@gmail.com';
-        $smtpPass = getenv('MAIL_APP_PASSWORD') ?: 'YOUR_APP_PASSWORD';
+        $smtpUser = getenv('MAIL_USERNAME') ?: 'karungokeith@gmail.com';
+        $smtpPass = getenv('MAIL_APP_PASSWORD') ?: 'zbok nzfx btdy rgox';
         $fromAddress = getenv('MAIL_FROM_ADDRESS') ?: $smtpUser;
         $fromName = getenv('MAIL_FROM_NAME') ?: 'PrivateHire Team';
 
@@ -129,4 +129,3 @@ if (!function_exists('privatehire_mask_card')) {
         return strtoupper($brand) . ' **** **** **** ' . $last4;
     }
 }
-
