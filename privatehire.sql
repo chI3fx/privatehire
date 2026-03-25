@@ -246,6 +246,85 @@ ALTER TABLE `bookings`
   ADD COLUMN IF NOT EXISTS `card_brand` enum('visa','mastercard','amex') DEFAULT NULL,
   ADD COLUMN IF NOT EXISTS `card_last4` varchar(4) DEFAULT NULL,
   ADD COLUMN IF NOT EXISTS `cancelled_at` datetime DEFAULT NULL;
+
+-- --------------------------------------------------------
+-- Sprint 3 migration additions
+-- --------------------------------------------------------
+ALTER TABLE `users`
+  ADD COLUMN IF NOT EXISTS `account_source` enum('web','phone') DEFAULT 'web',
+  ADD COLUMN IF NOT EXISTS `loyalty_tier` varchar(50) DEFAULT NULL;
+
+ALTER TABLE `drivers`
+  ADD COLUMN IF NOT EXISTS `email` varchar(100) DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `licence_number` varchar(100) DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `active` tinyint(1) DEFAULT 1;
+
+ALTER TABLE `vehicles`
+  ADD COLUMN IF NOT EXISTS `active` tinyint(1) DEFAULT 1;
+
+ALTER TABLE `bookings`
+  ADD COLUMN IF NOT EXISTS `offer_code_id` int(11) DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `offer_discount_amount` decimal(10,2) DEFAULT 0.00,
+  ADD COLUMN IF NOT EXISTS `delayed_notified` tinyint(1) DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS `eta_minutes` int(11) DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `actual_eta` datetime DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `service_type` varchar(100) DEFAULT 'Standard Ride';
+
+ALTER TABLE `enquiries`
+  ADD COLUMN IF NOT EXISTS `user_id` int(11) DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `booking_id` int(11) DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `status` enum('open','resolved') DEFAULT 'open',
+  ADD COLUMN IF NOT EXISTS `response` text DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS `response_date` datetime DEFAULT NULL;
+
+CREATE TABLE IF NOT EXISTS `reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `journey_rating` tinyint(4) NOT NULL,
+  `vehicle_rating` tinyint(4) NOT NULL,
+  `driver_rating` tinyint(4) NOT NULL,
+  `review_text` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_booking_user_review` (`booking_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `offer_codes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `discount_percent` decimal(5,2) NOT NULL DEFAULT 0.00,
+  `expires_at` datetime NOT NULL,
+  `is_used` tinyint(1) DEFAULT 0,
+  `used_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `source` varchar(50) DEFAULT 'manual',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `delay_notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `eta_minutes` int(11) DEFAULT NULL,
+  `sent_via` enum('sms','email') NOT NULL,
+  `sent_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `admin_activity_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `admin_user_id` int(11) NOT NULL,
+  `action_type` varchar(100) NOT NULL,
+  `entity_type` varchar(100) NOT NULL,
+  `entity_id` int(11) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

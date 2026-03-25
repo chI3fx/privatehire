@@ -18,10 +18,12 @@ if (session_status() === PHP_SESSION_NONE) {
                     <a class="btn btn-light me-2" href="/privatehire/admin/drivers.php">Drivers</a>
                     <a class="btn btn-light me-2" href="/privatehire/admin/vehicles.php">Vehicles</a>
                     <a class="btn btn-light me-2" href="/privatehire/admin/call_bookings.php">Call Bookings</a>
-                    <a class="btn btn-light me-2" href="/privatehire/contact.php">Contact Messages</a>
+                    <a class="btn btn-light me-2" href="/privatehire/admin/reviews.php">Reviews</a>
+                    <a class="btn btn-light me-2" href="/privatehire/admin/reports.php">Reports</a>
+                    <a class="btn btn-light me-2" href="/privatehire/admin/enquiries.php">Enquiries</a>
                 <?php } else { ?>
                     <a class="btn btn-light me-2" href="/privatehire/booking/book.php">Book Ride</a>
-                    <a class="btn btn-light me-2" href="/privatehire/booking/my_bookings.php">My Bookings</a>
+                    <a class="btn btn-light me-2" href="/privatehire/booking/my_bookings.php">Booking History</a>
                     <a class="btn btn-light me-2" href="/privatehire/contact.php">Contact</a>
                 <?php } ?>
 

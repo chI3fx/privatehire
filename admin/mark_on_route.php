@@ -6,6 +6,7 @@ include "../config/services.php";
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     die("Access denied");
 }
+$adminId = (int)$_SESSION['user_id'];
 
 $id = (int)($_GET['id'] ?? 0);
 if ($id <= 0) {
@@ -36,7 +37,8 @@ if ($booking['status'] === 'Cancelled') {
     exit();
 }
 
-$conn->query("UPDATE bookings SET status='On Route' WHERE id={$id}");
+$conn->query("UPDATE bookings SET status='On Route', eta_minutes=5, delayed_notified=0 WHERE id={$id}");
+privatehire_log_admin_activity($conn, $adminId, 'mark_on_route', 'booking', $id, 'Booking marked on route with initial ETA 5 mins.');
 
 $driverDetails = "Driver {$booking['driver_name']}; Reg {$booking['registration_number']}; "
     . "Car " . trim(($booking['colour'] ?? '') . ' ' . ($booking['make'] ?? '') . ' ' . ($booking['model'] ?? ''));
@@ -51,4 +53,3 @@ if (!$smsSent) {
 
 header("Location: dashboard.php");
 exit();
-

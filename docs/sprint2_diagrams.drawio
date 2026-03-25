@@ -1,0 +1,134 @@
+<mxfile host="app.diagrams.net" modified="2026-03-24T09:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="wireframes-page" name="Wireframes">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="wf1" value="Online Booking Form\n- Pickup/Destination\n- Date/Time (future validation)\n- Passengers + Vehicle size\n- Notification preference" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="wf2" value="Booking Summary + Payment\n- Total cost\n- 15% online discount\n- Final cost\n- PayPal/Card (Visa/Mastercard/Amex)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="430" y="80" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="wf3" value="Printable Receipt\n- Journey details\n- Driver + vehicle\n- Payment status/reference\n- Print button" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="800" y="80" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="wf4" value="My Bookings + Cancel\n- Channel / cost / payment columns\n- 24h cancellation block\n- Refund policy + email confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="245" y="330" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="wf5" value="Call Centre Booking (Admin)\n- Search customer by name/phone/email\n- Identity verification checkbox\n- Phone booking (no discount)\n- Masked card history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="615" y="330" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="wf6" value="Admin Dashboard\n- Mark booking On Route\n- Sends driver SMS details\n- Email fallback on SMS failure" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="985" y="330" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="wfa" value="" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="wf1" target="wf2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="wfb" value="" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="wf2" target="wf3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="erd-page" name="ERD">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="users" value="USERS\nPK id\nusername\nemail\npassword\nphone\nrole\nreset_token\nreset_expires_at" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="240" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bookings" value="BOOKINGS\nPK id\nFK user_id\nFK vehicle_id\nFK driver_id\npickup, destination\njourney_date, journey_time\npassengers, status\nnotification_preference\nbooking_channel\ntotal_cost, discount_percent\ndiscount_amount, final_cost\npayment_method, payment_status\npayment_reference\ncard_brand, card_last4\nconfirmation_sent, reminder_sent\ncancelled_at" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="430" y="40" width="310" height="470" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vehicles" value="VEHICLES\nPK id\nname\nseats\nprice\nprice_per_km\nregistration_number\ncolour\nmake\nmodel" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="860" y="80" width="240" height="250" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="drivers" value="DRIVERS\nPK id\nname\nphone\nFK vehicle_id" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="860" y="390" width="240" height="160" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enquiries" value="ENQUIRIES\nPK id\nname\nemail\nmessage" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="240" height="160" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" value="1..*" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="users" target="bookings">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="1..*" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="vehicles" target="bookings">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="1..*" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="drivers" target="bookings">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="1..*" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="vehicles" target="drivers">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="usecase-page" name="Use Case">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="actor_customer" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="220" width="50" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor_staff" value="Call Centre Staff/Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="500" width="50" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor_sched" value="Reminder Scheduler" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="760" width="50" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="system" value="PrivateHire Sprint 2 System" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="1450" height="980" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc1" value="Reset Password" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="300" y="140" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc2" value="Create Online Booking" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="300" y="230" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc3" value="View Booking Summary" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="300" y="320" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc4" value="Pay for Booking" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="300" y="410" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc5" value="Apply 15% Online Discount" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="230" width="280" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc6" value="Receive Booking Confirmation" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="320" width="280" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc7" value="Receive Driver Reminder (10-15 min)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="610" y="760" width="320" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc8" value="View Printable Receipt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="300" y="500" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc9" value="Cancel Booking (>=24h)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="300" y="590" width="230" height="60" as="geometry"/></mxCell>
+
+        <mxCell id="uc10" value="Search Customer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="990" y="230" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc11" value="Verify Caller Identity" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="990" y="320" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc12" value="Create Phone Booking" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="990" y="410" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc13" value="Mark Booking On Route" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="990" y="500" width="230" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc14" value="Fallback to Email if SMS Fails" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="1270" y="680" width="320" height="60" as="geometry"/></mxCell>
+        <mxCell id="uc15" value="Mask Card Details in Staff View" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="990" y="590" width="280" height="60" as="geometry"/></mxCell>
+
+        <mxCell id="c1" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_customer" target="uc1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c2" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_customer" target="uc2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c3" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_customer" target="uc8"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c4" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_customer" target="uc9"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="s1" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_staff" target="uc10"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="s2" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_staff" target="uc11"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="s3" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_staff" target="uc12"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="s4" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_staff" target="uc13"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="s5" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_staff" target="uc15"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="r1" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_sched" target="uc7"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="l1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="uc2" target="uc5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l2" value="&lt;&lt;include&gt;&gt;" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="uc2" target="uc6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l3" value="&lt;&lt;extend&gt;&gt;" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="uc7" target="uc14"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l4" value="&lt;&lt;extend&gt;&gt;" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="uc13" target="uc14"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

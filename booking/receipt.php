@@ -63,6 +63,7 @@ $row = $result->fetch_assoc();
         <p><b>Total Cost:</b> <?php echo number_format((float)($row['total_cost'] ?? 0), 2); ?></p>
         <p><b>Discount %:</b> <?php echo number_format((float)($row['discount_percent'] ?? 0), 2); ?>%</p>
         <p><b>Discount Amount:</b> <?php echo number_format((float)($row['discount_amount'] ?? 0), 2); ?></p>
+        <p><b>Offer Discount:</b> <?php echo number_format((float)($row['offer_discount_amount'] ?? 0), 2); ?></p>
         <p><b>Final Cost:</b> <?php echo number_format((float)($row['final_cost'] ?? 0), 2); ?></p>
         <p><b>Payment Method:</b> <?php echo htmlspecialchars($row['payment_method'] ?? 'N/A'); ?></p>
         <p><b>Payment Status:</b> <?php echo htmlspecialchars($row['payment_status'] ?? 'N/A'); ?></p>
@@ -70,4 +71,3 @@ $row = $result->fetch_assoc();
         <p><b>Card:</b> <?php echo htmlspecialchars(privatehire_mask_card($row['card_brand'] ?? null, $row['card_last4'] ?? null)); ?></p>
     </div>
 </div>
-

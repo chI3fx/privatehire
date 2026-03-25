@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" modified="2026-03-24T10:30:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="lofi-wireframes" name="Sprint2 Wireframes Lofi">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="PrivateHire Sprint 2 - Low Fidelity Wireframes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scr1" value="1) Customer Booking Form" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="500" height="530" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1nav" value="NAVBAR [Logo] [Book Ride] [My Bookings] [Logout]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="60" y="110" width="460" height="40" as="geometry"/></mxCell>
+        <mxCell id="s1h" value="Book Taxi" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="70" y="165" width="200" height="25" as="geometry"/></mxCell>
+        <mxCell id="s1f1" value="Pickup location" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="205" width="420" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1f2" value="Destination" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="247" width="420" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1f3" value="Date [YYYY-MM-DD]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="289" width="205" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1f4" value="Time [HH:MM]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="285" y="289" width="205" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1f5" value="Passengers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="331" width="420" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1f6" value="Vehicle size [dropdown]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="373" width="420" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1f7" value="Notification preference [SMS/Email/Both]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="415" width="420" height="32" as="geometry"/></mxCell>
+        <mxCell id="s1btn" value="Continue to Summary" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="170" y="470" width="220" height="40" as="geometry"/></mxCell>
+
+        <mxCell id="scr2" value="2) Booking Summary + Payment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="580" y="70" width="500" height="530" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2nav" value="NAVBAR [Logo] [Book Ride] [My Bookings] [Logout]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="600" y="110" width="460" height="40" as="geometry"/></mxCell>
+        <mxCell id="s2h" value="Booking Summary" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="610" y="165" width="250" height="25" as="geometry"/></mxCell>
+        <mxCell id="s2sum" value="Pickup: ______\nDestination: ______\nDate/Time: ______\nVehicle: ______\n\nTotal Cost: ______\nOnline Discount (15%): ______\nFinal Cost: ______" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="610" y="200" width="440" height="180" as="geometry"/></mxCell>
+        <mxCell id="s2payh" value="Payment" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="610" y="395" width="160" height="25" as="geometry"/></mxCell>
+        <mxCell id="s2f1" value="Payment method [PayPal/Card]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="610" y="425" width="440" height="32" as="geometry"/></mxCell>
+        <mxCell id="s2f2" value="Card type [VISA/Mastercard/Amex]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="610" y="467" width="440" height="32" as="geometry"/></mxCell>
+        <mxCell id="s2f3" value="Card number" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="610" y="509" width="440" height="32" as="geometry"/></mxCell>
+        <mxCell id="s2btn" value="Confirm &amp; Pay" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="760" y="550" width="140" height="34" as="geometry"/></mxCell>
+
+        <mxCell id="scr3" value="3) My Bookings + Cancellation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="70" width="980" height="530" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3nav" value="NAVBAR [Logo] [Book Ride] [My Bookings] [Logout]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="1140" y="110" width="940" height="40" as="geometry"/></mxCell>
+        <mxCell id="s3h" value="My Bookings" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1150" y="165" width="200" height="25" as="geometry"/></mxCell>
+        <mxCell id="s3table" value="Pickup | Destination | Date | Time | Driver | Channel | Final Cost | Payment | Status | Actions\n-------------------------------------------------------------------------------------------------------------\n... row 1 ...                                                                                      [Receipt] [Cancel]\n... row 2 ...                                                                                      [Receipt] [Cancel]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;fontFamily=Courier New;" vertex="1" parent="1"><mxGeometry x="1150" y="200" width="920" height="220" as="geometry"/></mxCell>
+        <mxCell id="s3cancel" value="Cancellation panel:\n- Booking details\n- Refund policy text\n- Block if less than 24 hours\n- Confirm Cancellation button" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="1150" y="435" width="920" height="140" as="geometry"/></mxCell>
+
+        <mxCell id="scr4" value="4) Call Centre Booking (Admin)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="1020" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="s4nav" value="NAVBAR [Admin Dashboard] [Drivers] [Vehicles] [Call Bookings]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="60" y="680" width="980" height="40" as="geometry"/></mxCell>
+        <mxCell id="s4search" value="Search Customer (name/phone/email) [______________________________] [Search]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="740" width="960" height="36" as="geometry"/></mxCell>
+        <mxCell id="s4results" value="Search Results\nName | Email | Phone | Action\n-----------------------------------\n... row ... | [Select]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="70" y="790" width="460" height="210" as="geometry"/></mxCell>
+        <mxCell id="s4cust" value="Selected Customer\nName: ______\nEmail: ______\nPhone: ______\n\nMasked Card History\nVISA **** **** **** 1234\nMC   **** **** **** 5566" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="550" y="790" width="480" height="210" as="geometry"/></mxCell>
+        <mxCell id="s4verify" value="[ ] I have verified caller identity" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="1015" width="960" height="34" as="geometry"/></mxCell>
+        <mxCell id="s4f1" value="Pickup" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="1060" width="470" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f2" value="Destination" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="560" y="1060" width="470" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f3" value="Date" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="1102" width="230" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f4" value="Time" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="310" y="1102" width="230" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f5" value="Passengers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="550" y="1102" width="230" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f6" value="Vehicle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="800" y="1102" width="230" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f7" value="Notification [SMS/Email/Both]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="70" y="1144" width="470" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4f8" value="Payment method [Card/PayPal]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="560" y="1144" width="470" height="32" as="geometry"/></mxCell>
+        <mxCell id="s4btn" value="Create Phone Booking" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="430" y="1210" width="240" height="42" as="geometry"/></mxCell>
+
+        <mxCell id="scr5" value="5) Receipt + Admin On Route" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="640" width="1000" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="s5receipt" value="Receipt Screen\n[Print] button\n- Journey details\n- Driver &amp; vehicle details\n- Payment totals and status\n- Payment reference + masked card" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="1120" y="690" width="460" height="260" as="geometry"/></mxCell>
+        <mxCell id="s5admin" value="Admin Dashboard (Recent Bookings)\nCustomer | Pickup | Destination | Date | Time | Vehicle | Driver | Channel | Status | Actions\n\nIf status=Booked -> [Mark On Route]\nOn click: send driver details via SMS; fallback to email" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="1600" y="690" width="480" height="260" as="geometry"/></mxCell>
+        <mxCell id="s5rem" value="Automated Reminder Job\nRuns every 5 minutes\nFind bookings 10-15 mins before pickup\nSend reminder SMS with driver/car details\nFallback to email on SMS failure\nSet reminder_sent=1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;align=left;verticalAlign=top;spacingTop=8;spacingLeft=8;" vertex="1" parent="1"><mxGeometry x="1120" y="980" width="960" height="260" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

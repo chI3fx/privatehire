@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" modified="2026-03-24T12:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="sprint2-erd" name="Sprint 2 ERD">
+    <mxGraphModel dx="1365" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="users" value="Users\nPK id\nusername\nemail\npassword\nphone\nrole\nreset_token\nreset_expires_at" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="80" width="280" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bookings" value="Bookings\nPK id\nFK user_id\nFK vehicle_id\nFK driver_id\npickup\ndestination\njourney_date\njourney_time\npassengers\nstatus\nnotification_preference\nconfirmation_sent\nreminder_sent\nbooking_channel\ntotal_cost\ndiscount_percent\ndiscount_amount\nfinal_cost\npayment_method\npayment_status\npayment_reference\ncard_brand\ncard_last4\ncancelled_at" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="40" width="320" height="560" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vehicles" value="Vehicles\nPK id\nname\nseats\nprice\nprice_per_km\nregistration_number\ncolour\nmake\nmodel" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="90" width="280" height="260" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="drivers" value="Drivers\nPK id\nname\nphone\nFK vehicle_id" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="420" width="280" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enquiries" value="Enquiries\nPK id\nname\nemail\nmessage" style="shape=swimlane;startSize=30;rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="420" width="280" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel1" value="1 to many" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="users" target="bookings">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" value="1 to many" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="vehicles" target="bookings">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel3" value="1 to many" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="drivers" target="bookings">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel4" value="1 to many" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="vehicles" target="drivers">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="note1" value="Admin and Customer are represented by users.role" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#fff;strokeColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="70" y="620" width="300" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="note2" value="Sprint 2 adds: booking_channel, pricing/discount, payment, reminder/cancellation fields" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#fff;strokeColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="430" y="620" width="500" height="90" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

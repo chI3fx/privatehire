@@ -1,6 +1,7 @@
 <?php
 include "../auth/check_auth.php";
 include "../config/db.php";
+include "../config/services.php";
 include "../navbar.php";
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
@@ -12,6 +13,19 @@ $totalDrivers = $conn->query("SELECT COUNT(*) AS total FROM drivers")->fetch_ass
 $totalVehicles = $conn->query("SELECT COUNT(*) AS total FROM vehicles")->fetch_assoc()['total'];
 $totalEnquiries = $conn->query("SELECT COUNT(*) AS total FROM enquiries")->fetch_assoc()['total'];
 $phoneBookings = $conn->query("SELECT COUNT(*) AS total FROM bookings WHERE booking_channel='phone'")->fetch_assoc()['total'] ?? 0;
+$totalReviews = $conn->query("SELECT COUNT(*) AS total FROM reviews")->fetch_assoc()['total'] ?? 0;
+$loyalCustomers = $conn->query("SELECT COUNT(*) AS total FROM users WHERE loyalty_tier='LOYAL'")->fetch_assoc()['total'] ?? 0;
+
+if (isset($_GET['eta_booking']) && isset($_GET['eta_minutes'])) {
+    $bid = (int)$_GET['eta_booking'];
+    $eta = (int)$_GET['eta_minutes'];
+    if ($bid > 0 && $eta >= 0) {
+        $conn->query("UPDATE bookings SET eta_minutes={$eta}, delayed_notified=0 WHERE id={$bid}");
+        privatehire_log_admin_activity($conn, (int)$_SESSION['user_id'], 'set_eta', 'booking', $bid, "ETA set to {$eta} mins.");
+        header("Location: dashboard.php");
+        exit();
+    }
+}
 
 $recentBookings = $conn->query("
     SELECT bookings.*, users.username, vehicles.name AS vehicle_name, drivers.name AS driver_name
@@ -75,10 +89,15 @@ $recentEnquiries = $conn->query("
         <a class="btn btn-primary me-2" href="drivers.php">Manage Drivers</a>
         <a class="btn btn-success me-2" href="vehicles.php">Manage Vehicles</a>
         <a class="btn btn-dark me-2" href="call_bookings.php">Call Centre Bookings</a>
+        <a class="btn btn-info me-2" href="reviews.php">Reviews</a>
+        <a class="btn btn-secondary me-2" href="reports.php">Reports & Loyalty</a>
+        <a class="btn btn-outline-primary me-2" href="enquiries.php">Enquiries</a>
     </div>
 
     <div class="alert alert-secondary">
-        <strong>Phone Bookings:</strong> <?php echo (int)$phoneBookings; ?>
+        <strong>Phone Bookings:</strong> <?php echo (int)$phoneBookings; ?> |
+        <strong>Reviews:</strong> <?php echo (int)$totalReviews; ?> |
+        <strong>Loyal Customers:</strong> <?php echo (int)$loyalCustomers; ?>
     </div>
 
     <div class="card mb-4">
@@ -98,6 +117,7 @@ $recentEnquiries = $conn->query("
                         <th>Driver</th>
                         <th>Channel</th>
                         <th>Status</th>
+                        <th>ETA (mins)</th>
                         <th>Actions</th>
                     </tr>
 
@@ -120,10 +140,18 @@ $recentEnquiries = $conn->query("
                                     <span class="badge bg-success"><?php echo htmlspecialchars($row['status']); ?></span>
                                 <?php } ?>
                             </td>
+                            <td><?php echo (int)($row['eta_minutes'] ?? 0); ?></td>
                             <td>
                                 <?php if ($row['status'] === 'Booked') { ?>
                                     <a class="btn btn-sm btn-outline-primary" href="mark_on_route.php?id=<?php echo (int)$row['id']; ?>">
                                         Mark On Route
+                                    </a>
+                                    <a class="btn btn-sm btn-outline-warning" href="dashboard.php?eta_booking=<?php echo (int)$row['id']; ?>&eta_minutes=15">
+                                        Report Delay 15m
+                                    </a>
+                                <?php } elseif ($row['status'] === 'On Route') { ?>
+                                    <a class="btn btn-sm btn-outline-warning" href="dashboard.php?eta_booking=<?php echo (int)$row['id']; ?>&eta_minutes=15">
+                                        Delay 15m
                                     </a>
                                 <?php } else { ?>
                                     <span class="text-muted">N/A</span>
@@ -149,6 +177,7 @@ $recentEnquiries = $conn->query("
                         <th>Name</th>
                         <th>Email</th>
                         <th>Message</th>
+                        <th>Status</th>
                     </tr>
 
                     <?php while ($msg = $recentEnquiries->fetch_assoc()) { ?>
@@ -156,6 +185,7 @@ $recentEnquiries = $conn->query("
                             <td><?php echo htmlspecialchars($msg['name']); ?></td>
                             <td><?php echo htmlspecialchars($msg['email']); ?></td>
                             <td><?php echo htmlspecialchars($msg['message']); ?></td>
+                            <td><?php echo htmlspecialchars($msg['status'] ?? 'open'); ?></td>
                         </tr>
                     <?php } ?>
                 </table>
