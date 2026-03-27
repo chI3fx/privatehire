@@ -92,6 +92,7 @@ $recentEnquiries = $conn->query("
         <a class="btn btn-info me-2" href="reviews.php">Reviews</a>
         <a class="btn btn-secondary me-2" href="reports.php">Reports & Loyalty</a>
         <a class="btn btn-outline-primary me-2" href="enquiries.php">Enquiries</a>
+        <a class="btn btn-outline-dark me-2" href="gps_dashboard.php">GPS Dashboard</a>
     </div>
 
     <div class="alert alert-secondary">

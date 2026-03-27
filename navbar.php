@@ -21,6 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <a class="btn btn-light me-2" href="/privatehire/admin/reviews.php">Reviews</a>
                     <a class="btn btn-light me-2" href="/privatehire/admin/reports.php">Reports</a>
                     <a class="btn btn-light me-2" href="/privatehire/admin/enquiries.php">Enquiries</a>
+                    <a class="btn btn-light me-2" href="/privatehire/admin/gps_dashboard.php">GPS Dashboard</a>
                 <?php } else { ?>
                     <a class="btn btn-light me-2" href="/privatehire/booking/book.php">Book Ride</a>
                     <a class="btn btn-light me-2" href="/privatehire/booking/my_bookings.php">Booking History</a>
