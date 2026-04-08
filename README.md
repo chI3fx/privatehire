@@ -131,7 +131,7 @@ php booking\check_delays.php
 - Check SMTP credentials/environment variables
 - Check PHP error log / Apache error log
 
-## 10) Coursework Scope Notes
+## 10) Coursework Notes
 - Payment gateway and GPS integrations are implemented as **coursework simulation stubs** for end-to-end flow demonstration.
 - GPS dashboard currently uses hardcoded simulated fleet data for UI/interaction validation.
 
