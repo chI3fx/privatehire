@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2026-03-27T15:05:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="sprint3-usecase-style" name="Sprint 3">
+    <mxGraphModel dx="1365" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="sys" value="Sprint 3" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;fontStyle=1;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="210" y="10" width="980" height="900" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="userActor" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="50" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="adminActor" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="230" width="50" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uLogin" value="Login" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="620" y="60" width="150" height="58" as="geometry"/></mxCell>
+        <mxCell id="uHome" value="View Home&#xa;page" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="600" y="115" width="190" height="78" as="geometry"/></mxCell>
+
+        <mxCell id="u1" value="Register" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="210" width="160" height="58" as="geometry"/></mxCell>
+        <mxCell id="u2" value="Submit enquiry" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="270" width="170" height="62" as="geometry"/></mxCell>
+        <mxCell id="u3" value="View booking&#xa;history" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="255" y="340" width="185" height="72" as="geometry"/></mxCell>
+        <mxCell id="u4" value="Re-book past&#xa;journey" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="420" width="175" height="72" as="geometry"/></mxCell>
+        <mxCell id="u5" value="Leave booking&#xa;review" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="500" width="175" height="72" as="geometry"/></mxCell>
+        <mxCell id="u6" value="Redeem offer&#xa;code" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="580" width="175" height="72" as="geometry"/></mxCell>
+        <mxCell id="u7" value="Receive delay&#xa;notification" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="250" y="660" width="195" height="72" as="geometry"/></mxCell>
+
+        <mxCell id="a1" value="View Dashboard" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="900" y="210" width="190" height="70" as="geometry"/></mxCell>
+        <mxCell id="a2" value="Manage customer&#xa;accounts" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="770" y="280" width="220" height="82" as="geometry"/></mxCell>
+        <mxCell id="a3" value="Manage drivers&#xa;(CRUD + suspend)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="890" y="370" width="210" height="82" as="geometry"/></mxCell>
+        <mxCell id="a4" value="Manage vehicles&#xa;(CRUD + suspend)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="890" y="460" width="210" height="82" as="geometry"/></mxCell>
+        <mxCell id="a5" value="Respond to&#xa;enquiry" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="910" y="550" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="a6" value="View reviews" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="930" y="625" width="150" height="58" as="geometry"/></mxCell>
+        <mxCell id="a7" value="Generate loyalty&#xa;offers" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="900" y="690" width="190" height="72" as="geometry"/></mxCell>
+        <mxCell id="a8" value="Use GPS dashboard&#xa;(simulated)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="890" y="770" width="210" height="72" as="geometry"/></mxCell>
+
+        <mxCell id="m1" value="Apply offer&#xa;discount" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="520" y="610" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="m2" value="Log delay&#xa;notification" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="540" y="700" width="170" height="68" as="geometry"/></mxCell>
+        <mxCell id="m3" value="Log admin&#xa;activity" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="740" y="800" width="170" height="68" as="geometry"/></mxCell>
+
+        <mxCell id="e1" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="uLogin"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="uHome"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="userActor" target="u7"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e10" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="uLogin"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="uHome"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e16" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e18" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e19" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="adminActor" target="a8"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="d1" style="dashed=1;endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="u6" target="m1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="d2" style="dashed=1;endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="u7" target="m2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="d3" style="dashed=1;endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="a3" target="m3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="d4" style="dashed=1;endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="a4" target="m3"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

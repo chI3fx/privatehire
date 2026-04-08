@@ -75,7 +75,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
         <div class="card-body">
             <div class="border rounded p-4 bg-light">
                 <p class="mb-1"><strong>Dispatch Heat Zones:</strong> Westlands, CBD, Kilimani, Kileleshwa, Karen, JKIA</p>
-                <p class="mb-0 text-muted">For this sprint demo, location markers are represented in the table and summaries. API map integration can plug in later.</p>
+                <p class="mb-0 text-muted">For this sprint demo, location markers are represented in the table and summaries. API map integration .</p>
             </div>
         </div>
     </div>

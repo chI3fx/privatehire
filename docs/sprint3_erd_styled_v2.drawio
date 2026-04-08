@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" modified="2026-03-29T09:20:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="s3-erd-light-style" name="Sprint 3 ERD Styled">
+    <mxGraphModel dx="1365" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="customer" value="Customer" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="40" y="90" width="260" height="260" as="geometry"/></mxCell>
+        <mxCell id="customerFields" value="PK customer_id\nusername\nemail\nphone\npassword\naccount_source\nloyalty_tier\nreset_token\nreset_expires_at" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="customer"><mxGeometry x="0" y="34" width="260" height="226" as="geometry"/></mxCell>
+
+        <mxCell id="admin" value="Admin" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="470" y="120" width="240" height="200" as="geometry"/></mxCell>
+        <mxCell id="adminFields" value="PK admin_id\nname\nemail\npassword\nrole" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="admin"><mxGeometry x="0" y="34" width="240" height="166" as="geometry"/></mxCell>
+
+        <mxCell id="vehicle" value="Vehicle" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="930" y="40" width="280" height="260" as="geometry"/></mxCell>
+        <mxCell id="vehicleFields" value="PK vehicle_id\nvehicle_name\nseats\nprice_per_km\nregistration_number\ncolour\nmake\nmodel\navailability_status" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="vehicle"><mxGeometry x="0" y="34" width="280" height="226" as="geometry"/></mxCell>
+
+        <mxCell id="driver" value="Driver" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="930" y="360" width="280" height="250" as="geometry"/></mxCell>
+        <mxCell id="driverFields" value="PK driver_id\ndriver_name\nphone_number\nemail\nlicence_number\nFK vehicle_id\navailability_status" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="driver"><mxGeometry x="0" y="34" width="280" height="216" as="geometry"/></mxCell>
+
+        <mxCell id="booking" value="Booking" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="340" y="380" width="360" height="420" as="geometry"/></mxCell>
+        <mxCell id="bookingFields" value="PK booking_id\nFK customer_id\nFK vehicle_id\nFK driver_id\nFK offer_code_id\npickup\ndestination\njourney_date\njourney_time\nstatus\nservice_type\nnotification_preference\nbooking_channel\ntotal_cost\ndiscount_amount\noffer_discount_amount\nfinal_cost\npayment_method\npayment_status\neta_minutes\ndelayed_notified" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="booking"><mxGeometry x="0" y="34" width="360" height="386" as="geometry"/></mxCell>
+
+        <mxCell id="enquiry" value="Enquiry" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="40" y="520" width="250" height="280" as="geometry"/></mxCell>
+        <mxCell id="enquiryFields" value="PK enquiry_id\nFK customer_id\nFK booking_id\nmessage\nstatus\nresponse\nresponse_date" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="enquiry"><mxGeometry x="0" y="34" width="250" height="246" as="geometry"/></mxCell>
+
+        <mxCell id="offer" value="Offer Code" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="1260" y="70" width="260" height="230" as="geometry"/></mxCell>
+        <mxCell id="offerFields" value="PK offer_id\nFK customer_id\ncode\ndiscount_percent\nexpires_at\nis_used\nused_at" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="offer"><mxGeometry x="0" y="34" width="260" height="196" as="geometry"/></mxCell>
+
+        <mxCell id="review" value="Review" style="shape=swimlane;startSize=34;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontStyle=1;fontColor=#222222;" vertex="1" parent="1"><mxGeometry x="1260" y="360" width="260" height="220" as="geometry"/></mxCell>
+        <mxCell id="reviewFields" value="PK review_id\nFK booking_id\nFK customer_id\njourney_rating\nvehicle_rating\ndriver_rating\nreview_text" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=13;fontColor=#222222;" vertex="1" parent="review"><mxGeometry x="0" y="34" width="260" height="186" as="geometry"/></mxCell>
+
+        <mxCell id="rel1" value="1" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="customer" target="booking"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel2" value="M" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="booking" target="vehicle"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel3" value="M" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="booking" target="driver"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel4" value="1" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="vehicle" target="driver"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel5" value="1 to M" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="customer" target="enquiry"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel6" value="1 to M" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="customer" target="offer"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel7" value="1 to 1" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="booking" target="review"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel8" value="Admin manages" style="endArrow=none;html=1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="admin" target="vehicle"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel9" value="Admin manages" style="endArrow=none;html=1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="admin" target="driver"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="rel10" value="Admin responds" style="endArrow=none;html=1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="admin" target="enquiry"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
